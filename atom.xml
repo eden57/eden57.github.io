@@ -4,12 +4,12 @@
   <subtitle><![CDATA[记录技术的时空维度]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://laoqian.info/"/>
-  <updated>2014-01-13T15:29:50.706Z</updated>
+  <updated>2014-01-13T15:30:36.067Z</updated>
   <id>http://laoqian.info/</id>
   
   <author>
     <name><![CDATA[eden]]></name>
-    
+    <email><![CDATA[cyqian@gmail.com]]></email>
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
