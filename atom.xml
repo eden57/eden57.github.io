@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[laoqian.info]]></title>
-  <subtitle><![CDATA[记录技术的时空维度]]></subtitle>
+  <subtitle><![CDATA[记录与技术交汇的时空]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://laoqian.info/"/>
-  <updated>2014-01-13T15:30:36.067Z</updated>
+  <updated>2014-01-13T15:32:05.103Z</updated>
   <id>http://laoqian.info/</id>
   
   <author>
