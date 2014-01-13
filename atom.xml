@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录与技术交汇的时空]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://laoqian.info/"/>
-  <updated>2014-01-13T15:43:35.252Z</updated>
+  <updated>2014-01-13T15:44:39.967Z</updated>
   <id>http://laoqian.info/</id>
   
   <author>
@@ -51,9 +51,8 @@
     <link href="http://laoqian.info/2014/01/13/start-over/"/>
     <id>http://laoqian.info/2014/01/13/start-over/</id>
     <published>2014-01-13T10:41:05.000Z</published>
-    <updated>2014-01-13T15:43:22.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="-">再次迁徙</h2>
-<p>从松散的drupal到伟大的wordpress，又到octopress和hexo，数据都没有移植。但这一次次的迁徙反映了向往简单的内心，尤其是现在这个博客的折腾度，似乎是为了证明自己其实不够懒惰而找个理由。</p>
+    <updated>2014-01-13T15:44:33.000Z</updated>
+    <content type="html"><![CDATA[<p>从松散的drupal到伟大的wordpress，又到octopress和hexo，数据都没有移植。但这一次次的迁徙反映了向往简单的内心，尤其是现在这个博客的折腾度，似乎是为了证明自己其实不够懒惰而找个理由。</p>
 <p>好吧，其实在此期间还考察了很多平台，包括tumblr、lofter、新浪博客、网易博客、和讯博客等，均感到不满意。对什么不满？束缚！让人窒息的束缚。</p>
 <p>回归朴实，是一切事务发展历经浮躁后的必经之路，我尚未达此境界，但是感觉日常记录的点滴缺乏总结，或者说没有动力总结。东西就在哪里，不串联起来也能找得到，为什么要写呢？希望markdown带来舒适的同事，让我捡回思考与总结。</p>
 ]]></content>
