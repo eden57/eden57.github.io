@@ -3,9 +3,9 @@
   <title><![CDATA[laoqian.info]]></title>
   <subtitle><![CDATA[记录与技术交汇的时空]]></subtitle>
   <link href="/atom.xml" rel="self"/>
-  <link href="http://laoqian.info/"/>
-  <updated>2014-01-14T16:05:30.163Z</updated>
-  <id>http://laoqian.info/</id>
+  <link href="http://qiancy.com/"/>
+  <updated>2014-01-14T16:14:54.484Z</updated>
+  <id>http://qiancy.com/</id>
   
   <author>
     <name><![CDATA[eden]]></name>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[use-gunicorn-to-deploy-django]]></title>
-    <link href="http://laoqian.info/2014/01/14/use-gunicorn-to-deploy-django/"/>
-    <id>http://laoqian.info/2014/01/14/use-gunicorn-to-deploy-django/</id>
+    <link href="http://qiancy.com/2014/01/14/use-gunicorn-to-deploy-django/"/>
+    <id>http://qiancy.com/2014/01/14/use-gunicorn-to-deploy-django/</id>
     <published>2014-01-14T10:25:55.000Z</published>
     <updated>2014-01-14T15:49:37.000Z</updated>
     <content type="html"><![CDATA[<p>第一次注意到gunicorn这个django部署工具是在instagram的技术报告里，主要吸引我的地方就两个：</p>
@@ -39,14 +39,14 @@ $ sudo python ez_setup.py -U setuptools
 ]]></content>
     
     
-      <category term="django" scheme="http://laoqian.info/tags/django/"/>
+      <category term="django" scheme="http://qiancy.com/tags/django/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[为什么使用django]]></title>
-    <link href="http://laoqian.info/2014/01/13/why-django/"/>
-    <id>http://laoqian.info/2014/01/13/why-django/</id>
+    <link href="http://qiancy.com/2014/01/13/why-django/"/>
+    <id>http://qiancy.com/2014/01/13/why-django/</id>
     <published>2014-01-13T15:06:57.000Z</published>
     <updated>2014-01-13T15:26:04.000Z</updated>
     <content type="html"><![CDATA[<h2 id="-django-">使用django的缘由</h2>
@@ -69,16 +69,16 @@ $ sudo python ez_setup.py -U setuptools
 ]]></content>
     
     
-      <category term="django" scheme="http://laoqian.info/tags/django/"/>
+      <category term="django" scheme="http://qiancy.com/tags/django/"/>
     
-      <category term="python" scheme="http://laoqian.info/tags/python/"/>
+      <category term="python" scheme="http://qiancy.com/tags/python/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[重新开始]]></title>
-    <link href="http://laoqian.info/2014/01/13/start-over/"/>
-    <id>http://laoqian.info/2014/01/13/start-over/</id>
+    <link href="http://qiancy.com/2014/01/13/start-over/"/>
+    <id>http://qiancy.com/2014/01/13/start-over/</id>
     <published>2014-01-13T10:41:05.000Z</published>
     <updated>2014-01-13T15:44:33.000Z</updated>
     <content type="html"><![CDATA[<p>从松散的drupal到伟大的wordpress，又到octopress和hexo，数据都没有移植。但这一次次的迁徙反映了向往简单的内心，尤其是现在这个博客的折腾度，似乎是为了证明自己其实不够懒惰而找个理由。</p>
@@ -87,7 +87,7 @@ $ sudo python ez_setup.py -U setuptools
 ]]></content>
     
     
-      <category term="blog" scheme="http://laoqian.info/tags/blog/"/>
+      <category term="blog" scheme="http://qiancy.com/tags/blog/"/>
     
   </entry>
   
