@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录与技术交汇的时空]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://laoqian.info/"/>
-  <updated>2014-01-14T15:43:54.928Z</updated>
+  <updated>2014-01-14T15:53:10.203Z</updated>
   <id>http://laoqian.info/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://laoqian.info/2014/01/14/use-gunicorn-to-deploy-django/"/>
     <id>http://laoqian.info/2014/01/14/use-gunicorn-to-deploy-django/</id>
     <published>2014-01-14T10:25:55.000Z</published>
-    <updated>2014-01-14T10:39:51.000Z</updated>
+    <updated>2014-01-14T15:49:37.000Z</updated>
     <content type="html"><![CDATA[<p>第一次注意到gunicorn这个django部署工具是在instagram的技术报告里，主要吸引我的地方就两个：</p>
 <ol>
 <li>部署与扩展都非常容易</li>
