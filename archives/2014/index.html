@@ -65,6 +65,65 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2014-01-14T10:25:55.000Z"><a href="/2014/01/14/use-gunicorn-to-deploy-django/">1月 14 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/01/14/use-gunicorn-to-deploy-django/">use-gunicorn-to-deploy-django</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>第一次注意到gunicorn这个django部署工具是在instagram的技术报告里，主要吸引我的地方就两个：</p>
+<ol>
+<li>部署与扩展都非常容易</li>
+<li>与nginx集成良好</li>
+</ol>
+<h2 id="-">安装</h2>
+<h3 id="-">如果下载安装</h3>
+<pre><code>$ curl -O http://peak.telecommunity.com/dist/ez_setup.py
+$ sudo python ez_setup.py -U setuptools
+</code></pre><p>考虑到生产环境是linux，开发环境是mac，实际安装如下：</p>
+<h3 id="easy_install-linux-">easy_install安装(linux)</h3>
+<pre><code>$ sudo easy_install -U gunicorn
+</code></pre><h3 id="pip-mac-">pip安装(mac)</h3>
+<pre><code>$ sudo pip install gunicorn
+</code></pre><h2 id="-">配置</h2>
+<h3 id="django-settings-py">django settings.py</h3>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2014-01-13T15:06:57.000Z"><a href="/2014/01/13/why-django/">1月 13 2014</a></time>
       
       
@@ -177,7 +236,7 @@
   
     <li><a href="/tags/blog/">blog</a><small>1</small></li>
   
-    <li><a href="/tags/django/">django</a><small>1</small></li>
+    <li><a href="/tags/django/">django</a><small>2</small></li>
   
     <li><a href="/tags/python/">python</a><small>1</small></li>
   

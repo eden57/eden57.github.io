@@ -4,7 +4,7 @@
   <subtitle><![CDATA[记录与技术交汇的时空]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://laoqian.info/"/>
-  <updated>2014-01-13T15:44:39.967Z</updated>
+  <updated>2014-01-14T15:43:54.928Z</updated>
   <id>http://laoqian.info/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[use-gunicorn-to-deploy-django]]></title>
+    <link href="http://laoqian.info/2014/01/14/use-gunicorn-to-deploy-django/"/>
+    <id>http://laoqian.info/2014/01/14/use-gunicorn-to-deploy-django/</id>
+    <published>2014-01-14T10:25:55.000Z</published>
+    <updated>2014-01-14T10:39:51.000Z</updated>
+    <content type="html"><![CDATA[<p>第一次注意到gunicorn这个django部署工具是在instagram的技术报告里，主要吸引我的地方就两个：</p>
+<ol>
+<li>部署与扩展都非常容易</li>
+<li>与nginx集成良好</li>
+</ol>
+<h2 id="-">安装</h2>
+<h3 id="-">如果下载安装</h3>
+<pre><code>$ curl -O http://peak.telecommunity.com/dist/ez_setup.py
+$ sudo python ez_setup.py -U setuptools
+</code></pre><p>考虑到生产环境是linux，开发环境是mac，实际安装如下：</p>
+<h3 id="easy_install-linux-">easy_install安装(linux)</h3>
+<pre><code>$ sudo easy_install -U gunicorn
+</code></pre><h3 id="pip-mac-">pip安装(mac)</h3>
+<pre><code>$ sudo pip install gunicorn
+</code></pre><h2 id="-">配置</h2>
+<h3 id="django-settings-py">django settings.py</h3>
+]]></content>
+    
+    
+      <category term="django" scheme="http://laoqian.info/tags/django/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[为什么使用django]]></title>

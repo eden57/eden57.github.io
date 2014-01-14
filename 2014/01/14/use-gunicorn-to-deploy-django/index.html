@@ -3,16 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>重新开始 | laoqian.info</title>
+  <title>use-gunicorn-to-deploy-django | laoqian.info</title>
   <meta name="author" content="eden">
   
-  <meta name="description" content="从松散的drupal到伟大的wordpress，又到octopress和hexo，数据都没有移植。但这一次次的迁徙反映了向往简单的内心，尤其是现在这个博客的折腾度，似乎是为了证明自己其实不够懒惰而找个理由。
-好吧，其实在此期间还考察了很多平台，包括tumblr、lofter、新浪博客、网易博客、和讯">
+  <meta name="description" content="第一次注意到gunicorn这个django部署工具是在instagram的技术报告里，主要吸引我的地方就两个：
+
+部署与扩展都非常容易
+与nginx集成良好
+
+安装
+如果下载安装
+$ curl -O http://peak.telecommunity.com/dist/ez_setup.py
+$ ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="重新开始"/>
+  <meta property="og:title" content="use-gunicorn-to-deploy-django"/>
   <meta property="og:site_name" content="laoqian.info"/>
 
   
@@ -63,19 +70,32 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-01-13T10:41:05.000Z"><a href="/2014/01/13/start-over/">1月 13 2014</a></time>
+        <time datetime="2014-01-14T10:25:55.000Z"><a href="/2014/01/14/use-gunicorn-to-deploy-django/">1月 14 2014</a></time>
       
       
   
-    <h1 class="title">重新开始</h1>
+    <h1 class="title">use-gunicorn-to-deploy-django</h1>
   
 
     </header>
     <div class="entry">
       
-        <p>从松散的drupal到伟大的wordpress，又到octopress和hexo，数据都没有移植。但这一次次的迁徙反映了向往简单的内心，尤其是现在这个博客的折腾度，似乎是为了证明自己其实不够懒惰而找个理由。</p>
-<p>好吧，其实在此期间还考察了很多平台，包括tumblr、lofter、新浪博客、网易博客、和讯博客等，均感到不满意。对什么不满？束缚！让人窒息的束缚。</p>
-<p>回归朴实，是一切事务发展历经浮躁后的必经之路，我尚未达此境界，但是感觉日常记录的点滴缺乏总结，或者说没有动力总结。东西就在哪里，不串联起来也能找得到，为什么要写呢？希望markdown带来舒适的同事，让我捡回思考与总结。</p>
+        <p>第一次注意到gunicorn这个django部署工具是在instagram的技术报告里，主要吸引我的地方就两个：</p>
+<ol>
+<li>部署与扩展都非常容易</li>
+<li>与nginx集成良好</li>
+</ol>
+<h2 id="-">安装</h2>
+<h3 id="-">如果下载安装</h3>
+<pre><code>$ curl -O http://peak.telecommunity.com/dist/ez_setup.py
+$ sudo python ez_setup.py -U setuptools
+</code></pre><p>考虑到生产环境是linux，开发环境是mac，实际安装如下：</p>
+<h3 id="easy_install-linux-">easy_install安装(linux)</h3>
+<pre><code>$ sudo easy_install -U gunicorn
+</code></pre><h3 id="pip-mac-">pip安装(mac)</h3>
+<pre><code>$ sudo pip install gunicorn
+</code></pre><h2 id="-">配置</h2>
+<h3 id="django-settings-py">django settings.py</h3>
 
       
     </div>
@@ -85,7 +105,7 @@
         
   
   <div class="tags">
-    <a href="/tags/blog/">blog</a>
+    <a href="/tags/django/">django</a>
   </div>
 
 <!-- JiaThis Button BEGIN -->
