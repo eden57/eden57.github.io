@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>use-gunicorn-to-deploy-django | QianCY的技术日志</title>
+  <title>使用gunicorn来部署django应用 | QianCY的技术日志</title>
   <meta name="author" content="eden">
   
   <meta name="description" content="第一次注意到gunicorn这个django部署工具是在instagram的技术报告里，主要吸引我的地方就两个：
@@ -11,15 +11,14 @@
 部署与扩展都非常容易
 与nginx集成良好
 
-安装
-如果下载安装
-$ curl -O http://peak.telecommunity.com/dist/ez_setup.py
-$ ">
+下面实际的记录可能包含gunicorn和django以外的其他软件包的安装，是我顺手记录下得，基本环境并不包含这些。
+准备工作
+1.安装d">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="use-gunicorn-to-deploy-django"/>
+  <meta property="og:title" content="使用gunicorn来部署django应用"/>
   <meta property="og:site_name" content="QianCY的技术日志"/>
 
   
@@ -74,7 +73,7 @@ $ ">
       
       
   
-    <h1 class="title">use-gunicorn-to-deploy-django</h1>
+    <h1 class="title">使用gunicorn来部署django应用</h1>
   
 
     </header>
@@ -85,17 +84,79 @@ $ ">
 <li>部署与扩展都非常容易</li>
 <li>与nginx集成良好</li>
 </ol>
-<h2 id="-">安装</h2>
-<h3 id="-">如果下载安装</h3>
+<p>下面实际的记录可能包含gunicorn和django以外的其他软件包的安装，是我顺手记录下得，基本环境并不包含这些。</p>
+<h2 id="-">准备工作</h2>
+<h3 id="1-django">1.安装django</h3>
+<p>python不说了，linux基本自带。django可以向下面部分一样选择使用easy_install或者pip来安装，但是在我的环境下pipy的服务器下载django非常的慢，经常连不上，因此还是下载源码安装：
+目前的版本是<a href="https://www.djangoproject.com/download/1.6.1/tarball/" target="_blank">Django-1.6.1</a>。</p>
+<p>cd到解压目录，执行：</p>
+<pre><code>sudo python setup.py install
+</code></pre><h3 id="2-django-">2.django项目运行的依赖项</h3>
+<p>依赖项主要是数据库，以及django有关的各类插件或模块，以我自己的部署为例：</p>
+<p><strong>PostgreSQL</strong></p>
+<p>我的django使用PostgreSQL为主要数据库，所以这个逃不掉。下载与安装说明请<a href="http://www.postgresql.org/download/" target="_blank">戳这里</a>。尽管有种种不建议，我还是使用了官方提供的<a href="http://www.enterprisedb.com/products-services-training/pgdownload" target="_blank">Graphic Installer</a>。</p>
+<p><strong>psycopg2</strong></p>
+<p>PostgreSQL的python语言接口</p>
+<pre><code>sudo apt-get install python-psycopg2
+</code></pre><p><strong>空间数据支持</strong></p>
+<p>由于依赖PostgreSQL的空间数据扩展PostGIS，而读写空间数据需要其他额外的库资源。因此，安装完具体需要安装：</p>
+<ul>
+<li>GEOS</li>
+<li>PROJ.4</li>
+<li>PostGIS</li>
+</ul>
+<p>这个在OSX、Linux和Windows环境下差异较大，具体查看<a href="https://docs.djangoproject.com/en/dev/ref/contrib/gis/install/geolibs/" target="_blank">官方文档的说明</a>。</p>
+<h3 id="3-gunicorn">3.安装gunicorn</h3>
+<h4 id="-">下载源码安装</h4>
 <pre><code>$ curl -O http://peak.telecommunity.com/dist/ez_setup.py
 $ sudo python ez_setup.py -U setuptools
-</code></pre><p>考虑到生产环境是linux，开发环境是mac，实际安装如下：</p>
-<h3 id="easy_install-linux-">easy_install安装(linux)</h3>
+</code></pre><p>由于生产环境和开发环境不一样，实际上我用到了如下两个：</p>
+<h4 id="easy_install-">easy_install安装</h4>
 <pre><code>$ sudo easy_install -U gunicorn
-</code></pre><h3 id="pip-mac-">pip安装(mac)</h3>
+</code></pre><h4 id="pip-">pip安装</h4>
 <pre><code>$ sudo pip install gunicorn
-</code></pre><h2 id="-">配置</h2>
-<h3 id="django-settings-py">django settings.py</h3>
+</code></pre><h2 id="-gunicorn-">让gunicorn跑起来</h2>
+<h3 id="1-gunicorn-">1. gunicorn命令方式</h3>
+<pre><code>gunicorn
+gunicorn_django
+gunicorn_paster
+</code></pre><p><strong>gunicorn_django的写法</strong></p>
+<pre><code>$ gunicorn_django [OPTIONS] [SETTINGS_PATH]
+</code></pre><p>如果不指定[SETTINGS_PATH]，将在当前文件夹查找settings.py。</p>
+<p><strong>gunicorn的写法</strong></p>
+<p>根据官方文档的提示，建议Django1.4以上版本，直接使用gunicorn命令，而不是gunicorn_django命令，在这里暂时不去追究原因。</p>
+<p>其实很简单，cd到manage.py所在目录，从wsgi所在app启动（我的app叫mserv）。</p>
+<pre><code>gunicorn mserv.wsgi
+</code></pre><p>这就是纯WSGI写法。现在再多写一点，绑定ip和端口：</p>
+<pre><code>gunicorn -b 192.168.1.2:7777 mserv.wsgi
+</code></pre><p>好了，可以在客户机上查看你的服务了。那么可以再多一点点，多一个工人帮你搬东西，会快一些：</p>
+<pre><code>gunicorn -b 192.168.1.2:7777 -w 2 mserv.wsgi
+</code></pre><p>这样启动的时候你会看到两个worker：</p>
+<pre><code>2014-01-15 20:01:15 [26515] [INFO] Starting gunicorn 18.0
+2014-01-15 20:01:15 [26515] [INFO] Listening at: http://192.168.1.2:7777 (26515)
+2014-01-15 20:01:15 [26515] [INFO] Using worker: sync
+2014-01-15 20:01:15 [26520] [INFO] Booting worker with pid: 26520
+2014-01-15 20:01:15 [26521] [INFO] Booting worker with pid: 26521
+</code></pre><p>多么体贴！</p>
+<p>更多命令参数可看官方文档的<a href="http://docs.gunicorn.org/en/latest/settings.html" target="_blank">Settings部分</a>。</p>
+<h3 id="2-django-manage-py-">2. django manage.py方式</h3>
+<p>好吧，确实有更简单的方式，我们真的可以使用django的manage.py来跑gunicorn服务，我叫它植入式。</p>
+<p>首先修改django的settings.py:</p>
+<pre><code>INSTALLED_APPS = (
+    ...
+    &quot;gunicorn&quot;,
+)
+</code></pre><p>然后命令行到django项目目录，可以做很神奇的事情：</p>
+<pre><code>python manage.py run_gunicorn
+</code></pre><h2 id="-">小结</h2>
+<p>这是一个功能强大、易于配置的，对django友好的部署环境，这里是一个开始。个人而言，后面可以讨论的内容包括但不限于：</p>
+<ul>
+<li>性能测试与参数调优</li>
+<li>与nginx部署环境的整合</li>
+<li>合理处理消息，研究真实生产环境中如何管理服务</li>
+<li>对gunicorn运行状况的监控</li>
+<li>整合django的自动化部署</li>
+</ul>
 
       
     </div>
@@ -105,7 +166,7 @@ $ sudo python ez_setup.py -U setuptools
         
   
   <div class="tags">
-    <a href="/tags/django/">django</a>
+    <a href="/tags/django/">django</a>, <a href="/tags/gunicorn/">gunicorn</a>, <a href="/tags/postgresql/">postgresql</a>, <a href="/tags/postgis/">postgis</a>
   </div>
 
 <!-- JiaThis Button BEGIN -->
@@ -157,6 +218,12 @@ var jiathis_config = {data_track_clickback:'true'};
     <li><a href="/tags/blog/">blog</a><small>1</small></li>
   
     <li><a href="/tags/django/">django</a><small>2</small></li>
+  
+    <li><a href="/tags/gunicorn/">gunicorn</a><small>1</small></li>
+  
+    <li><a href="/tags/postgis/">postgis</a><small>1</small></li>
+  
+    <li><a href="/tags/postgresql/">postgresql</a><small>1</small></li>
   
     <li><a href="/tags/python/">python</a><small>1</small></li>
   
