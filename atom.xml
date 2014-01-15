@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://qiancy.com/"/>
-  <updated>2014-01-15T12:20:43.439Z</updated>
+  <updated>2014-01-15T12:31:58.358Z</updated>
   <id>http://qiancy.com/</id>
   
   <author>
@@ -19,13 +19,15 @@
     <link href="http://qiancy.com/2014/01/14/use-gunicorn-to-deploy-django/"/>
     <id>http://qiancy.com/2014/01/14/use-gunicorn-to-deploy-django/</id>
     <published>2014-01-14T10:25:55.000Z</published>
-    <updated>2014-01-15T12:13:49.000Z</updated>
+    <updated>2014-01-15T12:31:55.000Z</updated>
     <content type="html"><![CDATA[<p>第一次注意到gunicorn这个django部署工具是在instagram的技术报告里，主要吸引我的地方就两个：</p>
 <ol>
 <li>部署与扩展都非常容易</li>
 <li>与nginx集成良好</li>
 </ol>
 <p>下面实际的记录可能包含gunicorn和django以外的其他软件包的安装，是我顺手记录下得，基本环境并不包含这些。</p>
+<a id="more"></a>
+
 <h2 id="-">准备工作</h2>
 <h3 id="1-django">1.安装django</h3>
 <p>python不说了，linux基本自带。django可以向下面部分一样选择使用easy_install或者pip来安装，但是在我的环境下pipy的服务器下载django非常的慢，经常连不上，因此还是下载源码安装：
@@ -99,7 +101,13 @@ gunicorn_paster
 <li>整合django的自动化部署</li>
 </ul>
 ]]></content>
-    
+    <summary type="html"><![CDATA[<p>第一次注意到gunicorn这个django部署工具是在instagram的技术报告里，主要吸引我的地方就两个：</p>
+<ol>
+<li>部署与扩展都非常容易</li>
+<li>与nginx集成良好</li>
+</ol>
+<p>下面实际的记录可能包含gunicorn和django以外的其他软件包的安装，是我顺手记录下得，基本环境并不包含这些。</p>
+]]></summary>
     
       <category term="django" scheme="http://qiancy.com/tags/django/"/>
     
