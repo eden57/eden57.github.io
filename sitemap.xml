@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://qiancy.com/about/index.html</loc>
+    <lastmod>2014-01-15T12:54:34.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://qiancy.com/2014/01/13/why-django/</loc>
     <lastmod>2014-01-13T15:06:57.000Z</lastmod>
   </url>
